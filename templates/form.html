@@ -4,50 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Disease Prediction</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140vh;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Increased width to accommodate 2 columns */
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 9px; /* Space between columns and rows */
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Form Inputs */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+input[type="submit"] {
+    grid-column: span 2; /* Make the button span across both columns */
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Switch to 1 column on small screens */
+    }
+
+    input[type="submit"] {
+        grid-column: span 1; /* Make the button span 1 column on small screens */
+    }
+}
+    </style>
 </head>
 <body>
     <h1>Heart Disease Prediction Form</h1>
     <form action="/predict/" method="post">
-        <label for="age">Age:</label><br>
-        <input type="number" step="0.1" name="age" required><br>
-
-        <label for="sex">Sex (0 or 1):</label><br>
-        <input type="number" name="sex" required><br>
-
-        <label for="chest_pain_type">Chest Pain Type (0-3):</label><br>
-        <input type="number" name="chest_pain_type" required><br>
-
-        <label for="resting_blood_pressure">Resting Blood Pressure:</label><br>
-        <input type="number" step="0.1" name="resting_blood_pressure" required><br>
-
-        <label for="serum_cholestoral">Serum Cholestoral:</label><br>
-        <input type="number" step="0.1" name="serum_cholestoral" required><br>
-
-        <label for="fasting_blood_sugar">Fasting Blood Sugar (0 or 1):</label><br>
-        <input type="number" name="fasting_blood_sugar" required><br>
-
-        <label for="resting_ecg">Resting ECG (0-2):</label><br>
-        <input type="number" name="resting_ecg" required><br>
-
-        <label for="max_heart_rate">Max Heart Rate:</label><br>
-        <input type="number" step="0.1" name="max_heart_rate" required><br>
-
-        <label for="exercise_induced_angina">Exercise Induced Angina (0 or 1):</label><br>
-        <input type="number" name="exercise_induced_angina" required><br>
-
-        <label for="oldpeak">Oldpeak:</label><br>
-        <input type="number" step="0.1" name="oldpeak" required><br>
-
-        <label for="slope">Slope (0-2):</label><br>
-        <input type="number" name="slope" required><br>
-
-        <label for="num_major_vessels">Number of Major Vessels (0-3):</label><br>
-        <input type="number" name="num_major_vessels" required><br>
-
-        <label for="thal">Thal (0-3):</label><br>
-        <input type="number" name="thal" required><br>
-
-        <input type="submit" value="Predict">
+        <div class="form-grid">
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" step="0.1" name="age" required>
+            </div>
+            <div>
+                <label for="sex">Sex (0 or 1):</label>
+                <input type="number" name="sex" required>
+            </div>
+            <div>
+                <label for="chest_pain_type">Chest Pain Type (0-3):</label>
+                <input type="number" name="chest_pain_type" required>
+            </div>
+            <div>
+                <label for="resting_blood_pressure">Resting Blood Pressure:</label>
+                <input type="number" step="0.1" name="resting_blood_pressure" required>
+            </div>
+            <div>
+                <label for="serum_cholestoral">Serum Cholestoral:</label>
+                <input type="number" step="0.1" name="serum_cholestoral" required>
+            </div>
+            <div>
+                <label for="fasting_blood_sugar">Fasting Blood Sugar (0 or 1):</label>
+                <input type="number" name="fasting_blood_sugar" required>
+            </div>
+            <div>
+                <label for="resting_ecg">Resting ECG (0-2):</label>
+                <input type="number" name="resting_ecg" required>
+            </div>
+            <div>
+                <label for="max_heart_rate">Max Heart Rate:</label>
+                <input type="number" step="0.1" name="max_heart_rate" required>
+            </div>
+            <div>
+                <label for="exercise_induced_angina">Exercise Induced Angina (0 or 1):</label>
+                <input type="number" name="exercise_induced_angina" required>
+            </div>
+            <div>
+                <label for="oldpeak">Oldpeak:</label>
+                <input type="number" step="0.1" name="oldpeak" required>
+            </div>
+            <div>
+                <label for="slope">Slope (0-2):</label>
+                <input type="number" name="slope" required>
+            </div>
+            <div>
+                <label for="num_major_vessels">Number of Major Vessels (0-3):</label>
+                <input type="number" name="num_major_vessels" required>
+            </div>
+            <div>
+                <label for="thal">Thal (0-3):</label>
+                <input type="number" name="thal" required>
+            </div>
+            <div>
+                <input type="submit" value="Predict">
+            </div>
+        </div>
+        
     </form>
 </body>
 </html>
