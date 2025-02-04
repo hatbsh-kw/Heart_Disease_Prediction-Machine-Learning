@@ -4,5 +4,8 @@ joblib
 numpy
 scikit-learn
 jinja2
+pydantic
+python-multipart
+pandas
 
 
