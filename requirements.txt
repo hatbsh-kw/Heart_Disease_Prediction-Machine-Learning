@@ -3,5 +3,6 @@ fastapi
 joblib
 numpy
 scikit-learn
+jinja2
 
 
