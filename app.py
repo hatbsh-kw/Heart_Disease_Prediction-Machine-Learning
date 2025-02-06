@@ -1,16 +1,20 @@
 from fastapi import FastAPI, HTTPException, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles  # Corrected import
 from pydantic import BaseModel
 import joblib
 import numpy as np
 
+# Initialize FastAPI app
+app = FastAPI()
+
+# Serve static files from the "static" directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 # Load the saved model and scaler
 model = joblib.load('svm_heart_disease_model.joblib')
 scaler = joblib.load('scaler.joblib')
-
-# Initialize FastAPI app
-app = FastAPI()
 
 # Set up Jinja2 templates
 templates = Jinja2Templates(directory="templates")
@@ -47,7 +51,7 @@ async def predict(
     oldpeak: float = Form(...),
     slope: int = Form(...),
     num_major_vessels: int = Form(...),
-    thal: int = Form(...)
+    thal: int = Form(...),
 ):
     # Convert input data to a numpy array
     data = np.array([[ 

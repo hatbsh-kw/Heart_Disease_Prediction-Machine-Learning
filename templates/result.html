@@ -1,70 +1,71 @@
 <!DOCTYPE html>
+<link rel="icon" href="/static/images/download.jpg" type="image/jpg">
 <html lang="en">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+       /* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url('/static/images/BackgroundEraser_20250206_145909114.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgb(255, 255, 255);
+    background-color: #cdf4c6;
+}
+.title{
+    background-color: black;
+}
 
-        .container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 80%;
-            max-width: 600px;
-        }
+/* Container styling */
+h1 {
+    margin-top: 50px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+p {
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+}
 
-        p {
-            color: black;
-            background-color: rgb(200, 156, 91);
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 30px;
-        }
+strong {
+    color: #ffcc00; /* Highlight prediction result */
+}
 
-        strong {
-            font-size: 1.5em;
-            color: #96eb2e;
-        }
+/* Button Styling */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #df7d0d;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
 
-        a {
-            display: inline-block;
-            padding: 12px 20px;
-            margin-left: 10px;
-            font-size: 1em;
-            color: #fff;
-            background-color: #3498db;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
+a:hover {
+    background-color: #eebf05;
+   
+}
 
-        a:hover {
-            background-color: #2980b9;
-        }
 
     </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/images/images.jpg" type="image/jpg">
     <title>Prediction Result</title>
 </head>
 <body>
-    <h1>Prediction Result==>  </h1>
+    <h1 class="title">Prediction Result==>  </h1>
     <p>The prediction for heart disease is: <strong>{{ prediction }}</strong></p>
     <a href="/">Go Back</a>
 </body>
