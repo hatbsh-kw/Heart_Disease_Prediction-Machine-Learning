@@ -191,15 +191,21 @@
                 <br>
                 II. Sex: 0 = Female, 1 = Male.
                 <br>
-                III. Chest Pain Type 0-4: Different types of pain.
+                III. Chest Pain Type 0-4: Different types of pain.o	1 = Typical angina
+                ,	2 = Atypical angina
+                ,	3 = Non-anginal pain
+                ,	4 = Asymptomatic
+                
                 <br>
-                IV. Resting Blood Pressure: Normal BP level.
+                IV. Resting Blood Pressure: Blood pressure in mm Hg .
                 <br>
                 V. Serum Cholesterol: Cholesterol levels in mg/dl.
                 <br>
                 VI. Fasting Blood Sugar: 0 if &lt;120mg/dl, 1 if &gt;120mg/dl.
                 <br>
                 VII. Resting ECG: 0-2, measures heart's electrical activity.
+                ,0 = Normal, 1 = ST-T wave abnormality, 2 = Left ventricular hypertrophy
+
                 <br>
                 VIII. Max Heart Rate: Maximum HR achieved.
                 <br>
@@ -207,11 +213,13 @@
                 <br>
                 X. Oldpeak: ST depression induced by exercise.
                 <br>
-                XI. Slope: 0-2, ST segment slope.
+                XI. Slope: 0-3, ST segment slope. 1 = Upsloping ,2 = Flat
+            ,3 = Downsloping
+             <br>
+                XII. Major Vessels: 0-3, Number of major vessels colored.detected by fluoroscopy
                 <br>
-                XII. Major Vessels: 0-3, Number of major vessels colored.
-                <br>
-                XIII. Thalassemia: Type of blood disorder.
+                XIII. Thalassemia(3|6|7): Type of blood disorder.3 = Normal,6 = Fixed defect,7 = Reversible defect
+                
             </p>
         </div>
 
@@ -227,7 +235,7 @@
                     <input type="number" name="sex" required>
                 </div>
                 <div>
-                    <label for="chest_pain_type">Chest Pain Type (0-4):</label>
+                    <label for="chest_pain_type">Chest Pain Type (1-4):</label>
                     <input type="number" name="chest_pain_type" required>
                 </div>
                 <div>
@@ -259,7 +267,7 @@
                     <input type="number" step="0.1" name="oldpeak" required>
                 </div>
                 <div>
-                    <label for="slope">Slope (0-2):</label>
+                    <label for="slope">Slope (1-2):</label>
                     <input type="number" name="slope" required>
                 </div>
                 <div>
@@ -267,7 +275,7 @@
                     <input type="number" name="num_major_vessels" required>
                 </div>
                 <div>
-                    <label for="thal">Thalassemia:</label>
+                    <label for="thal">Thalassemia(3|6|7):</label>
                     <input type="number" name="thal" required>
                 </div>
                 <div>
