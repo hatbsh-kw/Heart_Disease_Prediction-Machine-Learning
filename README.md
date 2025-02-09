@@ -1,3 +1,6 @@
+Name= Habtamu kebede ID= 1401334
+
+Deployed Website URL= https://heart-disease-prediction-machine-learning.onrender.com/
 
 # Heart Disease Prediction FastAPI
 
@@ -50,8 +53,6 @@ uvicorn app:app --reload
 
 ---
 
-
-
 # POST /predict/
 
 This endpoint predicts whether an individual has heart disease or not. It expects form data with the following fields:
@@ -77,6 +78,7 @@ This endpoint predicts whether an individual has heart disease or not. It expect
 Here are some test cases you can use to test the FastAPI application, which will return the prediction result ("Presence" or "Absence"):
 
 1. Test Case 1 - Presence of heart disease
+
    - Input:
      - `age`: 63
      - `sex`: 1 (Male)
@@ -150,3 +152,4 @@ Expected Response:
 {
   "prediction": "Absence"
 }
+```

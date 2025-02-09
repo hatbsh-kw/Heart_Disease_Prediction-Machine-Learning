@@ -65,21 +65,22 @@
             width: 300px;
         }
 
-        /* Feature Description */
-        .feature-desc {
-            display: none;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: left;
-            position: absolute;
-            left: 250px; /* Move right of the first image */
-            top: 0;
-            width: 250px;
-            font-size: 14px;
-            line-height: 1.4;
-        }
+       /* Feature Description */
+.feature-desc {
+    display: none;
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker for better readability */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    position: absolute;
+    left: 250px; /* Positioned to the right of the first image */
+    bottom: 0;
+    width: 300px;
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 10; /* Ensure it appears above other elements */
+}
 
         .feature-btn {
             padding: 10px;
@@ -92,9 +93,12 @@
             transition: 0.3s;
         }
 
-        .feature-btn:hover + .feature-desc {
-            display: block;
-        }
+        /* Show feature description on hover or click */
+.feature-btn:hover + .feature-desc,
+.feature-btn:focus + .feature-desc {
+    display: block;
+}
+
 
         /* Form Container */
         form {
@@ -134,6 +138,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
+            position: fixed;
         }
 
         footer a {
@@ -142,29 +147,55 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
+        /* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: 80vh; /* Set a fixed height to enable scrolling */
+        padding: 10px; /* Add some padding */
+    }
+.logo{
+   left:0px;
+   bottom: 20px;
+    
+}
+    .image-container {
+        flex-direction: column; /* Stack images vertically on mobile */
+        align-items: center; /* Center-align images */
+        gap: 10px; /* Add some space between images */
+    }
 
-            .image-container {
-                flex-direction: row;
-                gap: 10px;
-                margin-bottom: 10px;
-            }
+    .side-image {
+        width: 100%; /* Full width for images on mobile */
+        max-width: 250px; /* Limit maximum width */
+    }
 
-            .side-image {
-                width: 120px;
-            }
+    .feature-desc {
+        position: static; /* Reset positioning for mobile */
+        width: 100%; /* Full width on mobile */
+        margin-top: 10px; /* Add some space above */
+        background: rgba(0, 0, 0, 0.9); /* Darker background for better contrast */
+        border-radius: 8px;
+        padding: 15px;
+        font-size: 12px; /* Slightly smaller font for mobile */
+    }
 
-            .feature-desc {
-                position: relative;
-                left: 0;
-                max-width: 100%;
-                margin-top: 10px;
-            }
-        }
+    .feature-btn:hover + .feature-desc,
+    .feature-btn:focus + .feature-desc {
+        display: block; /* Ensure it remains visible on mobile */
+    }
+
+    /* Ensure the form is scrollable if needed */
+    form {
+        width: 100%;
+        max-width: 100%; /* Allow the form to take full width */
+        margin-top: 20px; /* Add space between images and form */
+    }
+}
+            
+        
     </style>
 </head>
 <body>
